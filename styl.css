@@ -88,7 +88,8 @@ footer {
 
 .dilna h3 { margin: 0; font-size: 1.05rem; }
 
-/* Štítek se stavem projektu: „běží“, „rozpracované“… */
+/* Štítek se stavem projektu: „active“, „planned“… Je to napsaný text,
+   ne živý stav — o tom, jestli Mac zrovna běží, nic neví. */
 .stitek {
   padding: 0.05rem 0.55rem;
   font-size: 0.75rem;
