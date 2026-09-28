@@ -1,0 +1,52 @@
+/* reuel.cz — společný vzhled všech stránek.
+   Barvy jsou proměnné: tmavý režim přepíše jen je, pravidla zůstávají stejná. */
+
+:root {
+  color-scheme: light dark;
+  --papir: #f6f4f1;
+  --inkoust: #16191c;
+  --tlumene: #6b6862;
+  --linka: #e2ddd4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papir: #15181b;
+    --inkoust: #e9e6e1;
+    --tlumene: #9b968d;
+    --linka: #2b3036;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--papir);
+  color: var(--inkoust);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+/* Jeden sloupec textu; na mobilu zbyde po stranách 1.25rem okraje. */
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 0.4rem; }
+h2 { font-size: 1.1rem; margin: 2.2rem 0 0.6rem; }
+ul { padding-left: 1.1rem; }
+a { color: inherit; }
+code { font-size: 0.92em; }
+
+.tlumene { color: var(--tlumene); }
+
+/* Řádek nad nadpisem, který říká, kde na webu jsem. */
+.drobecky { margin: 0 0 1.5rem; font-size: 0.9rem; color: var(--tlumene); }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--linka);
+  color: var(--tlumene);
+  font-size: 0.9rem;
+}

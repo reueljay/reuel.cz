@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zásady ochrany soukromí — Watson · reuel.cz</title>
+<meta name="description" content="Jaká data z Gmailu Watson používá, komu se dostanou a co zůstává na autorově počítači.">
+<link rel="stylesheet" href="/styl.css">
+</head>
+<body>
+<main>
+  <p class="drobecky"><a href="/">reuel.cz</a> / <a href="/watson/">Watson</a> / Soukromí</p>
+  <h1>Zásady ochrany soukromí</h1>
+  <p>Platí pro aplikaci Watson, osobního asistenta, kterého provozuje jeho autor
+     pro sebe a svou domácnost. Aplikace je napojená na jedinou schránku Gmail,
+     autorovu. Jiné uživatele Googlu nemá.</p>
+
+  <h2>Jaká data z Googlu aplikace používá</h2>
+  <p>Má jediné oprávnění, <code>gmail.modify</code>. S ním čte hlavičky, obsah
+     a přílohy zpráv v autorově schránce, zakládá vlastní štítky a mění štítky
+     zpráv: třídí je, označuje hvězdičkou, archivuje, označuje jako přečtené
+     a nahlašuje spam. Zakládá koncepty odpovědí.</p>
+  <p>E-mail neodesílá, koncept odesílá vždy člověk. Trvale mazat nemůže, to
+     oprávnění nemá. K jiným službám Googlu (kalendář, kontakty, disk) přístup
+     nemá.</p>
+
+  <h2>Komu se data dostanou</h2>
+  <ul>
+    <li><strong>Anthropic (USA)</strong>, poskytovatel jazykového modelu. Dostává
+        text zpráv, aby je zatřídil, připravil ranní přehled, odpověděl na
+        autorovy dotazy a napsal koncept; když autor chce něco dohledat, i dotaz
+        pro vyhledávání na webu. Podle svých podmínek pro API tato data
+        nepoužívá k trénování modelů.</li>
+    <li><strong>Telegram</strong> doručuje autorovi výsledky: ranní přehled
+        s odesílateli a předměty, odpovědi na dotazy a koncepty. Zprávy drží
+        ve svém cloudu.</li>
+    <li><strong>Druhý člen domácnosti</strong> vidí jen společné poznámky
+        domácnosti. Z pošty se do nich dostane jen to, co tam autor výslovně
+        uloží.</li>
+  </ul>
+  <p>Nikomu dalšímu se data nepředávají, neprodávají se a nepoužívají se
+     k reklamě.</p>
+
+  <h2>Co zůstává na autorově počítači a jak dlouho</h2>
+  <p>Historie rozhovorů s Watsonem včetně toho, co při nich s poštou dělal,
+     deník, provozní záznamy a stručné záznamy o třídění (zařazení, důvod,
+     doména odesílatele, předměty vláken, která čekají na odpověď). Evidence
+     nákladů se maže po 120 dnech, ostatní zůstává, dokud to autor nesmaže.
+     Na autorův pokyn umí aplikace stáhnout starou poštu jako zálohu na jeho
+     disk.</p>
+
+  <h2>Omezené použití</h2>
+  <p>Užívání a předávání informací získaných z Google API se řídí
+     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+     včetně požadavků na omezené použití (Limited Use).</p>
+
+  <h2>Změny a kontakt</h2>
+  <p>Když se změní, co aplikace s daty dělá, změní se ve stejný den i tahle
+     stránka. Poslední úprava 28. 9. 2026.</p>
+  <p>Kontakt: <a href="mailto:jay@reuel.cz">jay@reuel.cz</a></p>
+
+  <footer>
+    <a href="/watson/">Watson</a> ·
+    <a href="/watson/podminky.html">Podmínky užití</a>
+  </footer>
+</main>
+</body>
+</html>
