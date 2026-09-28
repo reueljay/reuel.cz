@@ -7,6 +7,8 @@
   --inkoust: #16191c;
   --tlumene: #6b6862;
   --linka: #e2ddd4;
+  --karta: #fbfaf8;
+  --akcent: #2f6b57;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +17,8 @@
     --inkoust: #e9e6e1;
     --tlumene: #9b968d;
     --linka: #2b3036;
+    --karta: #1b1f23;
+    --akcent: #8fcbb4;
   }
 }
 
@@ -49,4 +53,48 @@ footer {
   border-top: 1px solid var(--linka);
   color: var(--tlumene);
   font-size: 0.9rem;
+}
+
+/* --- Úvodní stránka (main class="uvod") ---
+   Všechno níž platí jen pro úvod, Watsonovy stránky zůstávají, jak jsou. */
+
+.uvod h1 { font-size: 2.6rem; }
+.uvod a:hover { color: var(--akcent); }
+
+/* Dílna: karty vedle sebe, na úzkém displeji pod sebou.
+   auto-fill + minmax = kolik karet se vejde, tolik sloupců. */
+.dilna {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+.dilna li {
+  padding: 1rem 1.1rem;
+  background: var(--karta);
+  border: 1px solid var(--linka);
+  border-radius: 10px;
+}
+
+.dilna .hlavicka {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.dilna h3 { margin: 0; font-size: 1.05rem; }
+
+/* Štítek se stavem projektu: „běží“, „rozpracované“… */
+.stitek {
+  padding: 0.05rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--akcent);
+  border: 1px solid currentColor;
+  border-radius: 999px;
 }
