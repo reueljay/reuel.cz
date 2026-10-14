@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Znak DÁL: stará osa levice–pravice a šipka kolmo nahoru.
+       Slouží jako logo v liště i jako ikona v záložce prohlížeče. -->
+  <defs>
+    <linearGradient id="osa" x1="12" y1="0" x2="52" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6b57"/>
+      <stop offset="1" stop-color="#4c8dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0d1020"/>
+  <line x1="12" y1="47" x2="52" y2="47" stroke="url(#osa)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="32" y1="47" x2="32" y2="24" stroke="#d4ff3f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M32 10 23 25h18z" fill="#d4ff3f"/>
+</svg>

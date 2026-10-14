@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DÁL — ne doleva, ne doprava. Dál.</title>
+<!-- Pracovní verze: vyhledávače ji zatím nemají indexovat. Až Jay texty
+     schválí a pilot se spustí, tenhle řádek zmizí a pruh se přepíše. -->
+<meta name="robots" content="noindex">
+<meta name="description" content="Pilotní projekt: testujeme myšlenky, které nejsou levicové ani pravicové. Strana neexistuje, mluví přiznaný AI avatar.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DÁL — ne doleva, ne doprava. Dál.">
+<meta property="og:description" content="Pilotní projekt: testujeme myšlenky, které nejsou levicové ani pravicové. Strana neexistuje, mluví přiznaný AI avatar.">
+<meta name="theme-color" content="#0d1020">
+<link rel="icon" href="/pilot/znak.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/pilot/pilot.css">
+</head>
+<body>
+
+<p class="koncept" role="note"><strong>Pracovní verze pilotu.</strong> Strana neexistuje, testujeme myšlenky.
+   Texty jsou zatím návrh připravený s&nbsp;pomocí AI.</p>
+
+<header class="lista">
+  <div class="obal">
+    <a class="logo" href="/pilot/">
+      <img src="/pilot/znak.svg" alt="" width="32" height="32">
+      <span>DÁL</span>
+    </a>
+    <nav class="menu" aria-label="Hlavní menu">
+      <a href="#principy">Principy</a>
+      <a href="#temata">Témata</a>
+      <a href="#stul">U&nbsp;jednoho stolu</a>
+      <a href="#avatar">Kdo mluví</a>
+      <a class="tlacitko" href="#jak">Jak to funguje</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Úvod: hlavní sdělení a graf staré osy se šipkou DÁL. -->
+  <section class="hero">
+    <div class="obal">
+      <div>
+        <p class="nadtitul">Pilot · testujeme myšlenky</p>
+        <h1>Ne&nbsp;doleva, ne&nbsp;doprava. <span class="dal-slovo">Dál.</span></h1>
+        <p class="perex">Levice a&nbsp;pravice se přetahují o&nbsp;to, kdo má pravdu dnes. My se ptáme,
+           co bude fungovat za dvacet let. Zatím nejsme strana: testujeme, jestli tyhle
+           myšlenky dávají smysl lidem zleva i&nbsp;zprava.</p>
+        <div class="tlacitka">
+          <a class="tlacitko" href="#jak">Jak pilot funguje</a>
+          <a class="tlacitko obrys" href="#temata">Myšlenky</a>
+        </div>
+      </div>
+
+      <div class="hero-grafika">
+        <svg class="osa" viewBox="0 0 520 420" role="img" aria-labelledby="osa-popis">
+          <title id="osa-popis">Levice a&nbsp;pravice se přetahují po jedné čáře. DÁL z&nbsp;ní vychází kolmo nahoru: rozhoduje s&nbsp;ohledem na příští generaci, ne na příští volby.</title>
+          <defs>
+            <!-- U vodorovné čáry musí být přechod v souřadnicích stránky, jinak se nevykreslí. -->
+            <linearGradient id="o-cara" x1="50" y1="0" x2="470" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#ff6b57"/>
+              <stop offset="0.5" stop-color="#6b7090"/>
+              <stop offset="1" stop-color="#4c8dff"/>
+            </linearGradient>
+            <filter id="o-zare" x="-300%" y="-20%" width="700%" height="140%">
+              <feGaussianBlur stdDeviation="12"/>
+            </filter>
+          </defs>
+
+          <!-- Stará osa: levice ↔ pravice. -->
+          <line x1="58" y1="320" x2="462" y2="320" stroke="url(#o-cara)" stroke-width="3"/>
+          <path d="M48 320 62 312v16z" fill="#ff6b57"/>
+          <path d="M472 320 458 312v16z" fill="#4c8dff"/>
+          <text class="o-levice" x="50" y="354">levice</text>
+          <text class="o-pravice" x="470" y="354" text-anchor="end">pravice</text>
+
+          <!-- Dnešní strany na čáře; dvě skupiny se přetahují. -->
+          <g class="tah-l" fill="#2a3050" stroke="#8a8fa6" stroke-width="2">
+            <circle cx="118" cy="320" r="9"/>
+            <circle cx="152" cy="320" r="9"/>
+            <circle cx="190" cy="320" r="9"/>
+          </g>
+          <g class="tah-p" fill="#2a3050" stroke="#8a8fa6" stroke-width="2">
+            <circle cx="330" cy="320" r="9"/>
+            <circle cx="368" cy="320" r="9"/>
+            <circle cx="402" cy="320" r="9"/>
+          </g>
+
+          <!-- DÁL: kolmo nahoru. Záře pod šipkou, pak šipka. -->
+          <g class="zare" filter="url(#o-zare)">
+            <line x1="260" y1="316" x2="260" y2="96" stroke="#d4ff3f" stroke-width="10"/>
+          </g>
+          <line x1="260" y1="316" x2="260" y2="100" stroke="#d4ff3f" stroke-width="5" stroke-linecap="round"/>
+          <path d="M260 66 244 100h32z" fill="#d4ff3f"/>
+          <circle cx="260" cy="320" r="9" fill="#d4ff3f"/>
+          <text class="o-dal" x="288" y="100">DÁL</text>
+
+          <!-- Měřítko na šipce: jak daleko rozhodnutí dohlédne. -->
+          <line x1="250" y1="262" x2="270" y2="262" stroke="#d4ff3f" stroke-width="2"/>
+          <text class="o-mira-slaba" x="284" y="267">do příštích voleb</text>
+          <line x1="250" y1="168" x2="270" y2="168" stroke="#d4ff3f" stroke-width="2"/>
+          <text class="o-mira" x="284" y="173">pro příští generaci</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce" id="principy">
+    <div class="obal">
+      <div class="hlavicka-sekce">
+        <p class="nadtitul">Tři principy</p>
+        <h2>Jak chceme dělat politiku</h2>
+        <p>Nejde o&nbsp;to, na které straně kdo sedí. Jde o&nbsp;to, co bude fungovat.</p>
+      </div>
+      <div class="trojice">
+        <article class="karta">
+          <p class="cislo">01</p>
+          <h3>Řešení, ne nepřítel</h3>
+          <p>Neptáme se, jestli je nápad levicový, nebo pravicový. Ptáme se, jestli bude
+             fungovat i&nbsp;za dvacet let.</p>
+        </article>
+        <article class="karta">
+          <p class="cislo">02</p>
+          <h3>Data místo dojmů</h3>
+          <p>Každé tvrzení s&nbsp;čísly a&nbsp;zdrojem. Když se spleteme, řekneme to nahlas.</p>
+        </article>
+        <article class="karta">
+          <p class="cislo">03</p>
+          <h3>AI radí, člověk rozhoduje</h3>
+          <p>Technologie pomůže spočítat dopady. Za rozhodnutí vždycky odpovídá člověk.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témata: u každého starý spor, pohled DÁL a otázka pro čtenáře. -->
+  <section class="sekce bila" id="temata">
+    <div class="obal">
+      <div class="hlavicka-sekce">
+        <p class="nadtitul">Témata</p>
+        <h2>Starý spor, nový pohled</h2>
+        <p>U&nbsp;každého tématu nejdřív řekneme, o&nbsp;co se dnes přetahuje levice s&nbsp;pravicí.
+           Pak se podíváme dál: co bude fungovat za dvacet let.</p>
+      </div>
+
+      <ul class="legenda" aria-label="Vysvětlivky">
+        <li><span class="stupnice" aria-hidden="true"></span>Starý spor — levice proti pravici</li>
+        <li><span class="sipka" aria-hidden="true"></span>Dál — náš pohled</li>
+      </ul>
+
+      <div class="temata">
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg></span>
+            <h3>Bydlení</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Má byty stavět stát, nebo trh?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Spočítat, kolik bytů bude potřeba za dvacet let, a&nbsp;postavit je včas. Oba nástroje, jedno měřítko: dostupnost.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> chceš bydlet v&nbsp;nájmu, nebo ve vlastním?</p>
+        </article>
+
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span>
+            <h3>Vzdělávání</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Jednotná škola pro všechny, nebo volnost a&nbsp;výběr?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Škola, která učí myslet a&nbsp;pracovat s&nbsp;AI. Úspěch měřit tím, co absolventi umí za deset let.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> je AI ve škole příležitost, nebo hrozba?</p>
+        </article>
+
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></svg></span>
+            <h3>Práce v&nbsp;době AI</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Chránit zaměstnance, nebo uvolnit podnikání?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Připravit lidi na práci, která teprve vznikne: rekvalifikace i&nbsp;prostor pro nové firmy.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> bojíš se, že ti AI vezme práci?</p>
+        </article>
+
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <h3>Energie a&nbsp;klima</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Zákazy a&nbsp;dotace, nebo trh?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Levná a&nbsp;čistá energie z&nbsp;vlastních zdrojů, spočítaná na třicet let dopředu.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> stojí ti za to zaplatit dnes víc, aby energie byla za deset let levnější?</p>
+        </article>
+
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5 5 0 0 0-8.8-2.1 5 5 0 0 0-8.8 2.1C2 10.5 6 15 12 20c6-5 10-9.5 8.8-13.4z"/><path d="M7 11.5h3l1.5-2.5 2 5 1.5-2.5h2"/></svg></span>
+            <h3>Zdraví</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Víc peněz do systému, nebo víc soutěže?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Péče, na kterou se nečeká měsíce, včetně péče o&nbsp;duševní zdraví.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> je duševní zdraví pro tvou generaci největší téma?</p>
+        </article>
+
+        <article class="tema">
+          <div class="tema-hlava">
+            <span class="ikona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 4.8"/></svg></span>
+            <h3>Mezi generacemi</h3>
+          </div>
+          <div class="spor"><p class="popisek"><span class="stupnice" aria-hidden="true"></span>Starý spor</p><p>Společný průběžný systém, nebo vlastní spoření?</p></div>
+          <div class="dal-blok"><p class="popisek"><span class="sipka" aria-hidden="true"></span>Dál</p><p>Spočítat důchody tak, aby fungovaly i&nbsp;pro dnešní dvacátníky, a&nbsp;říct tu pravdu nahlas.</p></div>
+          <p class="otazka"><strong>Ptáme se:</strong> věříš, že jednou dostaneš důchod?</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce" id="stul">
+    <div class="obal">
+      <div class="hlavicka-sekce">
+        <p class="nadtitul">Připravujeme</p>
+        <h2>U&nbsp;jednoho stolu</h2>
+        <p>Série rozhovorů: dva mladí lidé z&nbsp;opačných stran, jedno téma, jeden stůl.
+           Moderuje AI avatar a&nbsp;přináší čísla. Nehledáme vítěze, hledáme řešení,
+           na kterém se shodnou.</p>
+      </div>
+      <ul class="stul">
+        <li><span class="osoba">odborář</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">podnikatelka</span></li>
+        <li><span class="osoba">studentka</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">živnostník</span></li>
+        <li><span class="osoba">programátorka</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">instalatér</span></li>
+        <li><span class="osoba">z&nbsp;Prahy</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">z&nbsp;vesnice</span></li>
+        <li><span class="osoba">konzervativec</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">progresivistka</span></li>
+        <li><span class="osoba">řidička</span><span class="a" aria-hidden="true">&amp;</span><span class="osoba">cyklista</span></li>
+      </ul>
+      <p class="poznamka">Chceš si ke stolu sednout? Přihlášky otevřeme brzy.</p>
+    </div>
+  </section>
+
+  <section class="sekce bila" id="avatar">
+    <div class="obal mluvci">
+      <svg class="avatar" viewBox="0 0 220 240" role="img" aria-labelledby="avatar-popis">
+        <title id="avatar-popis">AI avatar pilotu DÁL: tmavá hlava se štítkem AI, korálové a&nbsp;modré oko, limetkový úsměv a&nbsp;šipka nahoru.</title>
+        <path d="M110 6 96 30h28z" fill="#d4ff3f"/>
+        <line x1="110" y1="28" x2="110" y2="48" stroke="#d4ff3f" stroke-width="6" stroke-linecap="round"/>
+        <rect x="20" y="48" width="180" height="170" rx="56" fill="#151a33" stroke="#2a3050" stroke-width="2"/>
+        <g class="mrk"><circle cx="78" cy="124" r="17" fill="#ff6b57"/><circle cx="84" cy="118" r="5" fill="#fff" opacity="0.85"/></g>
+        <g class="mrk"><circle cx="142" cy="124" r="17" fill="#4c8dff"/><circle cx="148" cy="118" r="5" fill="#fff" opacity="0.85"/></g>
+        <path d="M84 166q26 20 52 0" fill="none" stroke="#d4ff3f" stroke-width="7" stroke-linecap="round"/>
+        <g transform="translate(160 76)"><rect x="-22" y="-13" width="44" height="26" rx="13" fill="#d4ff3f"/><text class="av-ai" y="5" text-anchor="middle">AI</text></g>
+      </svg>
+      <div>
+        <p class="nadtitul">Kdo tu mluví</p>
+        <h2>Jsem AI avatar. Ne&nbsp;politik.</h2>
+        <p>Ve videích pilotu mluvím já. Nejsem člověk a&nbsp;nebudu předstírat, že jsem.
+           Jedno oko mám po levici, druhé po pravici a&nbsp;dívám se dál.</p>
+        <p>Texty pro mě připravují lidé s&nbsp;pomocí AI a&nbsp;lidé je schvalují. Ve videích mě
+           vždycky poznáš podle označení AI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce tmava" id="jak">
+    <div class="obal">
+      <div class="hlavicka-sekce">
+        <p class="nadtitul">Pilot</p>
+        <h2>Jak tenhle pilot funguje</h2>
+        <p>Než vznikne strana, ověřujeme, jestli myšlenky obstojí u&nbsp;lidí zleva i&nbsp;zprava.
+           Každý krok je vidět.</p>
+      </div>
+
+      <ol class="tok" aria-label="Jak pilot probíhá">
+        <li><h3>Myšlenka</h3><p>Jedna z&nbsp;šesti témat nebo tří principů.</p></li>
+        <li><h3>Video a&nbsp;texty</h3><p>Mluví AI avatar, vždy označený.</p></li>
+        <li><h3>Reakce</h3><p>Měříme, co zabírá u&nbsp;lidí zleva i&nbsp;zprava.</p></li>
+        <li><h3>Výsledek</h3><p>Zveřejníme, co jsme zjistili. I&nbsp;když to nedopadne.</p></li>
+      </ol>
+
+      <div class="zasady">
+        <div><h3>Strana neexistuje</h3><p>Zatím jen testujeme myšlenky a&nbsp;způsob řeči.</p></div>
+        <div><h3>Nic se neplatí</h3><p>Žádná placená reklama ani placení tvůrci.</p></div>
+        <div><h3>Bez sledování</h3><p>Web nepoužívá cookies ani měření návštěvnosti.</p></div>
+        <div><h3>Kdo za tím stojí</h3><p>Jednotlivci s&nbsp;pomocí AI. Jména řekneme, až vznikne strana.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce" id="plan">
+    <div class="obal">
+      <div class="hlavicka-sekce">
+        <p class="nadtitul">Plán</p>
+        <h2>Co bude dál</h2>
+        <p>Strana vznikne, jen když myšlenky obstojí. Kritéria říkáme předem.</p>
+      </div>
+      <ol class="plan">
+        <li class="ted"><h3>Pilot <span class="stav">teď</span></h3><p>Do jara 2027 testujeme myšlenky a&nbsp;způsob řeči.</p></li>
+        <li><h3>Strana nebo hnutí</h3><p>Jen když aspoň tři myšlenky obstojí u&nbsp;lidí zleva i&nbsp;zprava a&nbsp;najde se deset lidí, kteří za ně dají své jméno.</p></li>
+        <li><h3>Volby odspodu</h3><p>Od roku 2028. Nejdřív tam, kde budeme silní, pak dál.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="vyzva" id="zapoj-se">
+    <div class="obal">
+      <h2>Budoucnost se nevolí doleva ani doprava.</h2>
+      <div>
+        <p>Chceš vědět, jak pilot dopadne? Zápisník pilotu spustíme brzy.</p>
+        <!-- Zatím nic nesbírá: seznam zájemců = osobní údaje a souhlas. -->
+        <span class="tlacitko tmave" aria-disabled="true">Zápisník již brzy</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pata">
+  <div class="obal">
+    <span class="logo"><img src="/pilot/znak.svg" alt="" width="26" height="26"> DÁL</span>
+    <p>Pracovní název · Pilotní projekt, strana neexistuje · Bez cookies a&nbsp;bez měření návštěvnosti</p>
+  </div>
+</footer>
+
+</body>
+</html>

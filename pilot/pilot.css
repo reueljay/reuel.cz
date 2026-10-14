@@ -1,9 +1,8 @@
-/* Průnik — vzhled stránky strany. Má vlastní styl, se zbytkem reuel.cz
-   nesdílí nic. Barvy jsou pevné (značka), na tmavý režim systému nereagují.
+/* DÁL — pilot. Vzhled stránky pilotu; se zbytkem reuel.cz nesdílí nic.
+   Barvy jsou pevné (značka), na tmavý režim systému nereagují.
 
-   Tři barvy nesou celý příběh:
-   korálová = solidarita (tradice levice), modrá = svoboda (tradice pravice),
-   limetková = průnik, to nové, co vzniká spojením. */
+   Barevný příběh: korálová a modrá = stará osa (levice a pravice),
+   limetková = DÁL, nový směr kolmo na ni. Limetková není jejich směs. */
 
 :root {
   --noc: #0d1020;
@@ -16,11 +15,9 @@
   --linka: #e4e1d8;
 
   --levy: #ff6b57;
-  --levy-text: #b8321f;   /* tmavší odstín pro text na světlém pozadí */
   --pravy: #4c8dff;
-  --pravy-text: #2257c9;
-  --prunik: #d4ff3f;
-  --prunik-text: #4a6500;
+  --dal: #d4ff3f;
+  --dal-text: #4a6500;   /* tmavší odstín pro text na světlém pozadí */
 
   --sirka: 72rem;
   --okraj: clamp(1rem, 4vw, 2rem);
@@ -40,7 +37,7 @@ body {
 
 img, svg { max-width: 100%; }
 
-:focus-visible { outline: 3px solid var(--prunik); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--dal); outline-offset: 3px; }
 
 /* Sticky lišta je vysoká 4rem; kotvy se zastaví pod ní, ne za ní. */
 section[id] { scroll-margin-top: 4rem; }
@@ -51,12 +48,12 @@ section[id] { scroll-margin-top: 4rem; }
   padding-inline: var(--okraj);
 }
 
-/* --- Pruh „pracovní verze“ --- */
+/* --- Pruh, který říká, co tahle stránka je --- */
 
 .koncept {
   margin: 0;
   padding: 0.55rem var(--okraj);
-  background: var(--prunik);
+  background: var(--dal);
   color: var(--noc);
   font-size: 0.85rem;
   text-align: center;
@@ -89,7 +86,7 @@ section[id] { scroll-margin-top: 4rem; }
   color: #fff;
   font-weight: 800;
   font-size: 1.25rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-decoration: none;
 }
 
@@ -108,9 +105,9 @@ section[id] { scroll-margin-top: 4rem; }
   display: inline-flex;
   align-items: center;
   padding: 0.8rem 1.35rem;
-  border: 2px solid var(--prunik);
+  border: 2px solid var(--dal);
   border-radius: 999px;
-  background: var(--prunik);
+  background: var(--dal);
   color: var(--noc);
   font-weight: 700;
   text-decoration: none;
@@ -125,7 +122,7 @@ section[id] { scroll-margin-top: 4rem; }
 
 .tlacitko.tmave { background: var(--noc); color: #fff; border-color: var(--noc); }
 
-/* Tlačítko, které zatím nikam nevede (přihlášky ještě neběží). */
+/* Tlačítko, které zatím nikam nevede. */
 .tlacitko[aria-disabled="true"] { cursor: default; opacity: 0.85; }
 .tlacitko[aria-disabled="true"]:hover { transform: none; box-shadow: none; }
 
@@ -154,7 +151,7 @@ h2 {
   align-items: center;
   gap: 0.55rem;
   margin: 0;
-  color: var(--prunik-text);
+  color: var(--dal-text);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -167,7 +164,7 @@ h2 {
   border-radius: 50%;
   background: currentColor;
 }
-.hero .nadtitul, .tmava .nadtitul { color: var(--prunik); }
+.hero .nadtitul, .tmava .nadtitul { color: var(--dal); }
 
 /* --- Úvod (hero) --- */
 
@@ -175,13 +172,14 @@ h2 {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(55% 60% at 10% 20%, rgba(255, 107, 87, 0.2), transparent 70%),
-    radial-gradient(55% 60% at 92% 78%, rgba(76, 141, 255, 0.22), transparent 70%),
+    radial-gradient(45% 55% at 8% 85%, rgba(255, 107, 87, 0.16), transparent 70%),
+    radial-gradient(45% 55% at 95% 85%, rgba(76, 141, 255, 0.18), transparent 70%),
+    radial-gradient(40% 50% at 70% 15%, rgba(212, 255, 63, 0.1), transparent 70%),
     var(--noc);
   color: #fff;
 }
 
-/* Jemná mřížka v pozadí, ke krajům mizí. */
+/* Jemná mřížka v pozadí — milimetrový papír pro graf. Ke krajům mizí. */
 .hero::before {
   content: "";
   position: absolute;
@@ -211,22 +209,14 @@ h2 {
 
 h1 {
   margin: 1rem 0 1.25rem;
-  font-size: clamp(2.7rem, 7.2vw, 5.4rem);
-  line-height: 1;
+  font-size: clamp(2.6rem, 6.6vw, 5rem);
+  line-height: 1.02;
   letter-spacing: -0.04em;
   font-weight: 800;
 }
 
-/* „z obou stran“: přechod z korálové přes limetkovou do modré. */
-.duha { color: var(--prunik); }
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .duha {
-    background: linear-gradient(90deg, var(--levy), var(--prunik) 50%, var(--pravy));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-}
+/* „Dál.“ je limetková — nový směr, ne směs dvou starých barev. */
+.dal-slovo { color: var(--dal); }
 
 .perex {
   max-width: 34rem;
@@ -238,35 +228,23 @@ h1 {
 
 .tlacitka { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 
-/* Diagram dvou kruhů. Texty uvnitř SVG berou písmo ze stránky. */
-.venn { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
-.venn text { text-anchor: middle; }
-.v-nazev { font-size: 18px; font-weight: 800; }
-.v-pod { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; opacity: 0.8; }
-.v-levy { fill: #ffb3a8; }
-.v-pravy { fill: #a9c8ff; }
-.v-cocka-nazev { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; fill: var(--noc); }
-.v-cocka-pod { font-size: 13px; font-weight: 700; fill: var(--noc); opacity: 0.7; }
+/* Graf v úvodu: stará osa a šipka DÁL. Texty berou písmo ze stránky. */
+.osa { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
+.o-levice { font-size: 15px; font-weight: 700; fill: #ffb3a8; }
+.o-pravice { font-size: 15px; font-weight: 700; fill: #a9c8ff; }
+.o-dal { font-size: 46px; font-weight: 800; letter-spacing: 0.01em; fill: var(--dal); }
+.o-mira { font-size: 14px; font-weight: 600; fill: #e6e8f5; }
+.o-mira-slaba { font-size: 14px; font-weight: 600; fill: var(--svetly); opacity: 0.75; }
 
-.cip rect { fill: rgba(255, 255, 255, 0.06); stroke: rgba(255, 255, 255, 0.22); }
-.cip text { font-size: 13px; font-weight: 600; fill: #e6e8f5; }
+/* Pohyb: strany na čáře se přetahují, šipka DÁL „dýchá“. */
+.tah-l { animation: tah 2.6s ease-in-out infinite alternate; }
+.tah-p { animation: tah 2.6s ease-in-out infinite alternate-reverse; }
+.zare { opacity: 0.5; animation: dech 3.5s ease-in-out infinite alternate; }
 
-/* Pohyb: hodnoty se pomalu vznášejí, průnik „dýchá“. */
-.cip { animation: vznaseni 5s ease-in-out infinite alternate; }
-.cip-2 { animation-delay: -1.5s; }
-.cip-3 { animation-delay: -3s; }
-.cip-4 { animation-delay: -4.2s; }
-.zare { opacity: 0.55; animation: dech 3.5s ease-in-out infinite alternate; }
-
-@keyframes vznaseni { from { transform: translateY(-5px); } to { transform: translateY(5px); } }
+@keyframes tah { from { transform: translateX(-5px); } to { transform: translateX(5px); } }
 @keyframes dech { to { opacity: 0.95; } }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .cip, .zare { animation: none; }
-}
-
-/* --- Proč nová strana: tři karty --- */
+/* --- Principy: tři karty --- */
 
 .trojice { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 @media (max-width: 860px) { .trojice { grid-template-columns: 1fr; } }
@@ -275,16 +253,16 @@ h1 {
   padding: 1.75rem;
   border: 1px solid var(--linka);
   border-radius: 20px;
-  /* Proužek nahoře: korálová → limetková → modrá. */
+  /* Limetkový proužek nahoře. */
   background:
-    linear-gradient(90deg, var(--levy), var(--prunik), var(--pravy)) top / 100% 4px no-repeat,
+    linear-gradient(90deg, var(--dal), var(--dal)) top / 100% 4px no-repeat,
     #fff;
 }
-.karta .cislo { margin: 0; color: var(--prunik-text); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; }
+.karta .cislo { margin: 0; color: var(--dal-text); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; }
 .karta h3 { margin: 0.5rem 0; font-size: 1.35rem; }
 .karta p:last-child { margin: 0; color: var(--sedy); }
 
-/* --- Témata --- */
+/* --- Témata: starý spor → pohled DÁL → otázka --- */
 
 .legenda {
   display: flex;
@@ -298,10 +276,27 @@ h1 {
   font-weight: 600;
 }
 .legenda li { display: flex; align-items: center; gap: 0.5rem; }
-.legenda li::before { content: ""; width: 0.75rem; height: 0.75rem; border-radius: 50%; }
-.leg-levy::before { background: var(--levy); }
-.leg-pravy::before { background: var(--pravy); }
-.leg-prunik::before { background: var(--prunik); box-shadow: inset 0 0 0 2px var(--noc); }
+
+/* Malá stupnice: korálová tečka — čára — modrá tečka. */
+.stupnice {
+  flex: none;
+  width: 2.2rem;
+  height: 0.6rem;
+  background:
+    radial-gradient(circle at 0.3rem 50%, var(--levy) 0.26rem, transparent 0.28rem),
+    radial-gradient(circle at calc(100% - 0.3rem) 50%, var(--pravy) 0.26rem, transparent 0.28rem),
+    linear-gradient(var(--linka), var(--linka)) center / 100% 2px no-repeat;
+}
+/* Malá šipka nahoru v limetkové. */
+.sipka {
+  flex: none;
+  width: 0.7rem;
+  height: 0.8rem;
+  background: var(--dal);
+  clip-path: polygon(50% 0, 100% 55%, 68% 55%, 68% 100%, 32% 100%, 32% 55%, 0 55%);
+}
+/* Na bílém pozadí je limetková málo vidět — v legendě dostane tmavší odstín. */
+.legenda .sipka { background: var(--dal-text); }
 
 /* Kolik karet se vejde vedle sebe, tolik sloupců; na mobilu jedna. */
 .temata {
@@ -313,7 +308,7 @@ h1 {
 .tema {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1rem;
   padding: 1.5rem;
   border: 1px solid var(--linka);
   border-radius: 20px;
@@ -333,36 +328,97 @@ h1 {
   height: 2.75rem;
   border-radius: 14px;
   background: var(--noc);
-  color: var(--prunik);
+  color: var(--dal);
 }
 .ikona svg { width: 1.35rem; height: 1.35rem; }
 
-/* Solidarita + svoboda → průnik. */
-.synteza { display: grid; gap: 0.6rem; margin: 0; }
-.synteza > div { display: grid; grid-template-columns: 6.4rem 1fr; gap: 0.75rem; align-items: baseline; }
-.synteza dt {
+.popisek {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  margin: 0 0 0.3rem;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.synteza dt::before { content: ""; flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: currentColor; }
-.synteza dd { margin: 0; color: var(--sedy); font-size: 0.97rem; line-height: 1.45; }
 
-.s-levy dt { color: var(--levy-text); }
-.s-pravy dt { color: var(--pravy-text); }
-.synteza .s-prunik { margin-top: 0.25rem; padding: 0.8rem 0.9rem; border-radius: 12px; background: var(--noc); }
-.s-prunik dt { color: var(--prunik); }
-.s-prunik dd { color: #fff; font-weight: 600; }
+.spor .popisek { color: var(--sedy); }
+.spor p:last-child { margin: 0; font-weight: 600; }
 
-@media (max-width: 380px) {
-  .synteza > div { grid-template-columns: 1fr; gap: 0.2rem; }
+.dal-blok { padding: 0.85rem 0.95rem; border-radius: 12px; background: var(--noc); color: #fff; }
+.dal-blok .popisek { color: var(--dal); }
+.dal-blok p:last-child { margin: 0; font-weight: 600; line-height: 1.45; }
+
+.otazka { margin: auto 0 0; color: var(--sedy); font-size: 0.97rem; }
+.otazka strong { color: var(--dal-text); }
+
+/* --- U jednoho stolu: dvojice lidí --- */
+
+.stul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  border: 1px solid var(--linka);
+  border-radius: 999px;
+  background: #fff;
+}
+.osoba {
+  flex: 1;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: var(--papir);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.a {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--noc);
+  color: var(--dal);
+  font-weight: 800;
+}
+.poznamka { margin: 1.5rem 0 0; color: var(--sedy); }
+
+/* --- Kdo tu mluví: avatar --- */
+
+.mluvci {
+  display: grid;
+  grid-template-columns: minmax(10rem, 15rem) 1fr;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  align-items: center;
+}
+.mluvci p { margin: 0 0 1rem; font-size: 1.15rem; }
+.mluvci p:last-child { margin: 0; color: var(--sedy); font-size: 1rem; }
+.mluvci h2 { margin-top: 0.75rem; }
+.avatar { display: block; width: 100%; height: auto; }
+.av-ai { font-size: 15px; font-weight: 800; fill: var(--noc); font-family: inherit; }
+
+/* Mrknutí jednou za pět vteřin. */
+.mrk { transform-box: fill-box; transform-origin: center; animation: mrk 5s infinite; }
+@keyframes mrk { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+
+@media (max-width: 700px) {
+  .mluvci { grid-template-columns: 1fr; }
+  .avatar { max-width: 11rem; }
 }
 
-/* --- AI: cesta od návrhu k rozhodnutí --- */
+/* --- Jak pilot funguje: cesta a pravidla --- */
 
 .tok {
   display: grid;
@@ -403,15 +459,15 @@ h1 {
   width: 1.7rem;
   height: 1.7rem;
   border-radius: 50%;
-  background: var(--prunik);
+  background: var(--dal);
   color: var(--noc);
   font-size: 0.9rem;
   font-weight: 800;
   transform: translateY(-50%);
 }
 
-/* Poslední krok — rozhoduje člověk — je zvýrazněný. */
-.tok li:last-child { border-color: var(--prunik); background: var(--prunik); color: var(--noc); }
+/* Poslední krok — zveřejníme výsledek — je zvýrazněný. */
+.tok li:last-child { border-color: var(--dal); background: var(--dal); color: var(--noc); }
 .tok li:last-child::before, .tok li:last-child p { color: rgba(13, 16, 32, 0.75); }
 
 @media (max-width: 900px) {
@@ -427,12 +483,11 @@ h1 {
 
 .zasady {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   gap: 2rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--noc-linka);
 }
-@media (max-width: 860px) { .zasady { grid-template-columns: 1fr; } }
 .zasady h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
 .zasady h3::before {
   content: "";
@@ -440,57 +495,16 @@ h1 {
   width: 1.5rem;
   height: 3px;
   margin-bottom: 0.8rem;
-  background: var(--prunik);
+  background: var(--dal);
 }
 .zasady p { margin: 0; color: var(--svetly); }
-
-/* --- U jednoho stolu: dvojice lidí --- */
-
-.stul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
-  gap: 0.9rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.stul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
-  padding: 0.5rem;
-  border: 1px solid var(--linka);
-  border-radius: 999px;
-  background: #fff;
-}
-.osoba {
-  flex: 1;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: var(--papir);
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-align: center;
-}
-.a {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 50%;
-  background: var(--noc);
-  color: var(--prunik);
-  font-weight: 800;
-}
 
 /* --- Plán: časová osa --- */
 
 .plan {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 0;
   padding: 0;
@@ -504,7 +518,7 @@ h1 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--noc) 0 18%, var(--linka) 18%);
+  background: linear-gradient(90deg, var(--noc) 0 22%, var(--linka) 22%);
 }
 .plan li { position: relative; padding-top: 2.3rem; }
 .plan li::before {
@@ -518,7 +532,7 @@ h1 {
   border-radius: 50%;
   background: #fff;
 }
-.plan .ted::before { border-color: var(--noc); background: var(--prunik); }
+.plan .ted::before { border-color: var(--noc); background: var(--dal); }
 .plan h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
 .plan p { margin: 0; color: var(--sedy); }
 
@@ -528,7 +542,7 @@ h1 {
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
   background: var(--noc);
-  color: var(--prunik);
+  color: var(--dal);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -545,14 +559,14 @@ h1 {
     right: auto;
     width: 2px;
     height: auto;
-    background: linear-gradient(180deg, var(--noc) 0 22%, var(--linka) 22%);
+    background: linear-gradient(180deg, var(--noc) 0 30%, var(--linka) 30%);
   }
   .plan li { padding: 0 0 0 2.5rem; }
 }
 
-/* --- Výzva: zapoj se --- */
+/* --- Výzva --- */
 
-.vyzva { background: var(--prunik); color: var(--noc); }
+.vyzva { background: var(--dal); color: var(--noc); }
 .vyzva .obal {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -570,3 +584,8 @@ h1 {
 .pata .obal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
 .pata p { margin: 0; }
 .pata .logo { font-size: 1.05rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tah-l, .tah-p, .zare, .mrk { animation: none; }
+}
