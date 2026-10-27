@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96">
+  <!-- Znak Jay Studio: zjednodušené schéma z úvodní stránky. Zdroje vlevo, uprostřed
+       kód, nahoře model (silnější kruh), dole člověk, vpravo výsledky.
+       Je jednobarevný jako logo JAY STUDIO: barvu bere z currentColor (na papíře
+       vínová, na vínové a modré ploše bílá). Model odlišuje silnější kruh.
+       Stránky ho vkládají přes <svg><use href="/img/logo.svg#znak"/></svg>;
+       poslední řádek ho vykreslí, když se soubor otevře samostatně. -->
+  <symbol id="znak" viewBox="0 0 120 96">
+    <g fill="none" stroke="currentColor" stroke-width="5">
+      <path d="M6 18C22 18 24 44.9 32.4 44.9"/>
+      <path d="M6 48H32"/>
+      <path d="M6 78C22 78 24 51.1 32.4 51.1"/>
+      <path d="M56 48H109"/>
+      <path d="M51.7 38.8C57 31 63 26 72.7 24.1"/>
+      <path d="M51.7 57.2C57 65 63 70 72.7 71.9"/>
+      <path d="M84 32V64"/>
+      <path d="M95.6 23.1C101 24.5 104 28 109 28"/>
+      <path d="M95.6 72.9C101 71.5 104 68 109 68"/>
+      <circle cx="44" cy="48" r="12"/>
+      <circle cx="84" cy="76" r="12"/>
+      <circle cx="84" cy="20" r="12" stroke-width="8"/>
+    </g>
+    <g fill="currentColor">
+      <circle cx="6" cy="18" r="6"/>
+      <circle cx="6" cy="48" r="6"/>
+      <circle cx="6" cy="78" r="6"/>
+    </g>
+    <g fill="currentColor">
+      <circle cx="114" cy="28" r="6"/>
+      <circle cx="114" cy="48" r="6"/>
+      <circle cx="114" cy="68" r="6"/>
+    </g>
+  </symbol>
+  <use href="#znak" style="color: #7A1F3A"/>
+</svg>

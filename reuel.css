@@ -3,7 +3,9 @@
    Princip: vínová staví stranu (jedna plocha vlevo nahoře, silné linky nad oddíly,
    pruh dole, čísla kroků), modrá nese obsah (text, tenké linky; jako plocha jen
    závěrečný kontakt). Čtyři barvy a bílá na plochách; žádné přechody, stíny,
-   zaoblení ani ikony. Nic se nenačítá zvenku.
+   zaoblení ani ikony. Logo je znak ze schématu (img/logo.svg) se slovem „jay studio“,
+   jednobarevné: bílé na ploše a pruhu, vínové na papíře (lišta s kotvami).
+   Nic se nenačítá zvenku.
    Watsonovy stránky mají vlastní styl.css a tenhle soubor nepoužívají. */
 
 /* ---------- písma: Jost a Literata, SIL Open Font License 1.1 (fonts/OFL-*.txt) ----------
@@ -56,8 +58,8 @@ body {
   background: var(--papir);
   color: var(--modra);
   font-family: var(--textove);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.65;
   font-kerning: normal;
   overflow-wrap: break-word;
 }
@@ -124,15 +126,33 @@ a:hover { color: var(--vinova); }
 
 .plocha :focus-visible { outline-color: var(--bila); }
 
+/* Logo: znak (zjednodušené schéma, img/logo.svg) a slovo „jay studio“. Barvu drží
+   i při najetí. Na úvodní stránce vede na projekty jako skryté tlačítko (.skryte),
+   proto při najetí nic nenapovídá; logo, které vede domů, se podtrhne. */
+.znacka, a.znacka:hover {
+  color: var(--bila);
+}
 .znacka {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
   font-family: var(--titulkove);
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
+  line-height: 1.2;
   letter-spacing: .005em;
-  color: var(--bila);
   text-decoration: none;
 }
-a.znacka:hover { color: var(--bila); text-decoration: underline; }
+a.znacka:not(.skryte):hover { text-decoration: underline; }
+.znak {
+  flex: none;
+  width: 3rem;
+  height: 2.4rem;
+}
+.plocha .znacka { align-self: flex-start; }
+
+/* Nízká plocha: stránky, které nejsou úvodní (projekty, 404). */
+.plocha.nizka { min-height: 15rem; }
 
 .plocha h1 {
   margin: 0;
@@ -156,10 +176,10 @@ a.znacka:hover { color: var(--bila); text-decoration: underline; }
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: .35rem 1.4rem;
+  gap: .4rem 1.6rem;
   font-family: var(--titulkove);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.0625rem;
 }
 .navigace a {
   text-decoration: none;
@@ -195,8 +215,8 @@ a.znacka:hover { color: var(--bila); text-decoration: underline; }
   margin-top: 1rem;
   font-family: var(--titulkove);
   font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.45;
+  font-size: 1.0625rem;
+  line-height: 1.5;
 }
 .schema figcaption span { display: block; }
 
@@ -256,6 +276,78 @@ a.znacka:hover { color: var(--bila); text-decoration: underline; }
   html { scroll-behavior: auto; }
 }
 
+/* ---------- lišta s kotvami: objeví se, až hlavička odjede z okna ----------
+   Řídí ji posun stránky (scroll-driven animations), žádný skript. Prohlížeč, který to
+   neumí, lištu neukáže vůbec a stačí mu navigace v hlavičce. Skrytá lišta má
+   visibility: hidden, takže na ni nedojde Tab ani čtečka; viditelnou (a klikatelnou)
+   se stane až v půlce náběhu, ne jako průhledný pruh. Při nízkém okně (velké
+   přiblížení) by zabrala moc místa, tam se nezobrazí. */
+:root { --lista: 3.5rem; }
+.lista { display: none; }
+
+@supports (animation-timeline: view()) and (timeline-scope: --a) {
+  body { timeline-scope: --hlava; }
+  .hlava { view-timeline: --hlava block; }
+  html:has(.lista) { scroll-padding-top: var(--lista); }
+
+  .lista {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 5;
+    background: var(--papir);
+    border-bottom: var(--vlas) solid var(--modra);
+    visibility: hidden;
+    animation: lista linear both;
+    animation-timeline: --hlava;
+    animation-range: exit-crossing 85% exit-crossing 100%;
+  }
+}
+@keyframes lista {
+  from { visibility: hidden; opacity: 0; }
+  50% { visibility: hidden; opacity: .5; }
+  to { visibility: visible; opacity: 1; }
+}
+@media (max-height: 30rem) {
+  .lista { display: none !important; }
+  html:has(.lista) { scroll-padding-top: 0; }
+}
+
+.lista .obal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .25rem 1.25rem;
+  min-height: var(--lista);
+  padding: .45rem 0;
+}
+.lista .znacka, .lista a.znacka:hover { color: var(--vinova); }
+.lista .znacka { font-size: 1.0625rem; gap: .5rem; }
+.lista .znak { width: 2.25rem; height: 1.8rem; }
+.lista ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  font-family: var(--titulkove);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.lista ul a { text-decoration: none; border-bottom: var(--vlas) solid transparent; }
+.lista ul a:hover { border-bottom-color: var(--vinova); }
+
+/* Na telefonu se slovo vedle znaku nevejde; jméno odkazu drží aria-label.
+   Na nejužších displejích se zúží mezery, aby lišta zůstala na jednom řádku. */
+@media (max-width: 28rem) {
+  .lista .slovo { display: none; }
+}
+@media (max-width: 21rem) {
+  .lista .obal, .lista ul { gap: .25rem .75rem; }
+}
+
 /* ---------- úvod pod hlavičkou ---------- */
 .uvod-blok { padding-top: 3rem; }
 
@@ -299,7 +391,7 @@ a.znacka:hover { color: var(--bila); text-decoration: underline; }
   margin: 0;
   font-family: var(--titulkove);
   font-weight: 600;
-  font-size: 1.375rem;
+  font-size: 1.875rem;
   line-height: 1.15;
 }
 
@@ -309,6 +401,8 @@ a.znacka:hover { color: var(--bila); text-decoration: underline; }
     column-gap: var(--mezera);
     margin-top: 6rem;
   }
+  /* Vedle obsahu v levém sloupci stačí menší název; nad obsahem ho nese velikost. */
+  .oddil > h2 { font-size: 1.5rem; }
 }
 
 .podnadpis {
@@ -329,10 +423,10 @@ ul.body li::before { content: "–"; position: absolute; left: 0; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
-  gap: 2.25rem var(--mezera);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: 2.75rem var(--mezera);
 }
-.sluzby li { border-top: var(--vlas) solid var(--modra); padding-top: 1rem; }
+.sluzby li { border-top: var(--vlas) solid var(--modra); padding-top: 1.1rem; }
 .sluzby h3 {
   margin: 0 0 .5rem;
   font-family: var(--titulkove);
@@ -340,15 +434,7 @@ ul.body li::before { content: "–"; position: absolute; left: 0; }
   font-size: 1.25rem;
   line-height: 1.2;
 }
-.sluzby p { margin: 0 0 .75rem; }
-.sluzby .priklad {
-  margin: 0;
-  font-family: var(--titulkove);
-  font-size: .9rem;
-  color: var(--seda);
-}
-.sluzby .priklad a { color: var(--modra); }
-.sluzby .priklad a:hover { color: var(--vinova); }
+.sluzby p { margin: 0; max-width: 34rem; }
 
 /* ---------- jak pracujeme: kroky, na jejichž pořadí záleží ---------- */
 ol.kroky {
@@ -357,7 +443,7 @@ ol.kroky {
   padding: 0;
   counter-reset: k;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 27rem), 1fr));
   gap: 2.25rem var(--mezera);
 }
 ol.kroky li { counter-increment: k; position: relative; padding-left: 3.25rem; }
@@ -379,11 +465,11 @@ ol.kroky h3 {
   font-size: 1.25rem;
   line-height: 1.2;
 }
-ol.kroky p { margin: 0; }
+ol.kroky p { margin: 0; max-width: 34rem; }
 
 .zasady {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
   gap: .4rem var(--mezera);
 }
 .zasady strong { font-family: var(--titulkove); font-weight: 600; }
@@ -393,14 +479,13 @@ ol.kroky p { margin: 0; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
   gap: 3rem var(--mezera);
-  margin-top: 2rem;
 }
 .karta {
   border-top: var(--vlas) solid var(--modra);
   padding-top: 1.1rem;
   scroll-margin-top: 1.5rem;
 }
-/* Karta, na kterou vede odkaz ze služeb, dostane silnou vínovou linku. */
+/* Karta, na kterou vede přímý odkaz (např. /projekty/#watson), dostane silnou vínovou linku. */
 .karta:target, .dalsi li:target {
   border-top: var(--linka) solid var(--vinova);
   padding-top: calc(1.1rem - 2px);
@@ -409,7 +494,7 @@ ol.kroky p { margin: 0; }
   margin: 0 0 .35rem;
   font-family: var(--titulkove);
   font-weight: 500;
-  font-size: .8125rem;
+  font-size: .875rem;
   letter-spacing: .02em;
   color: var(--seda);
 }
@@ -422,7 +507,8 @@ ol.kroky p { margin: 0; }
   letter-spacing: -.01em;
 }
 .karta .vystizne { margin: 0 0 1rem; }
-.karta ul.body { font-size: .9688rem; line-height: 1.55; }
+.karta ul.body { font-size: 1rem; line-height: 1.6; }
+.karta .vystizne, .karta ul.body, .dalsi p { max-width: 34rem; }
 .karta .dal {
   margin: 1rem 0 0;
   font-family: var(--titulkove);
@@ -442,10 +528,10 @@ ol.kroky p { margin: 0; }
   border-top: var(--vlas) solid var(--modra);
   padding-top: 1.1rem;
   scroll-margin-top: 1.5rem;
-  font-size: .9688rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
 }
-.dalsi h4 {
+.dalsi h3 {
   margin: 0 0 .4rem;
   font-family: var(--titulkove);
   font-weight: 600;
@@ -522,16 +608,16 @@ ol.kroky p { margin: 0; }
   min-height: 3.25rem;
   padding: .75rem 0;
 }
-.pata .znacka { font-size: 1rem; }
+.pata .znacka { font-size: 1.0625rem; gap: .5rem; }
+.pata .znak { width: 2.25rem; height: 1.8rem; }
 .pata a { color: var(--bila); }
 .pata :focus-visible { outline-color: var(--bila); }
 
-/* ---------- stránka 404: nízká plocha, pruh přitlačený ke dnu okna ---------- */
+/* ---------- stránka 404: pruh přitlačený ke dnu okna ---------- */
 body:has(.chyba) {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
-.plocha.nizka { min-height: 15rem; }
 .chyba { flex: 1; padding: 3rem 0 5rem; }
 .chyba .akce { margin-top: 1.5rem; }

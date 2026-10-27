@@ -6,11 +6,14 @@ Hostuje GitHub Pages z větve `main`, z kořene repozitáře.
 | Co | Soubory |
 |---|---|
 | úvodní stránka — prezentace AI služeb pro firmy | `index.html`, `reuel.css`, `img/`, `fonts/` |
+| projekty — skrytá stránka, vede na ni jen logo na úvodní stránce | `projekty/index.html` |
 | stránky Watsona (viz níž) | `watson/`, `styl.css` |
 | chybová stránka | `404.html` |
 
 Vzhled úvodní stránky jde z firemního designu JAY STUDIO: vínová, písma Jost
-a Literata. Písma jsou uložená tady ve `fonts/` (licence SIL Open Font License,
+a Literata. Znak loga (`img/logo.svg`) je zjednodušené schéma z hlavičky;
+stránky ho vkládají přes `<use href="/img/logo.svg#znak">`. Ikona v záložce
+prohlížeče je jiný soubor, `img/ikona.svg` (písmeno „j“). Písma jsou uložená tady ve `fonts/` (licence SIL Open Font License,
 texty licencí vedle nich), nic se nenačítá odjinud.
 
 ## Náhled u sebe
