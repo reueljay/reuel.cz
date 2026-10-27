@@ -3,44 +3,315 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jay — reuel.cz</title>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styl.css">
+<meta name="robots" content="noindex">
+<title>Jay Studio · AI na míru vašim procesům</title>
+<meta name="description" content="Navrhujeme a stavíme AI asistenty, agenty a automatizace pro firmy. Od poznání procesu přes ověření na vašich datech po ostrý provoz s pojistkami.">
+<meta name="theme-color" content="#7A1F3A">
+<link rel="icon" href="/img/znak.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/Jost-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Literata-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/reuel.css">
 </head>
 <body>
-<main class="uvod">
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
 
-  <header>
-    <h1>Jay</h1>
-  </header>
+<header class="hlava">
+  <div class="obal hlava-mrizka">
+    <div class="plocha">
+      <a class="znacka" href="/">jay studio</a>
+      <h1>AI na míru vašim procesům</h1>
+    </div>
 
-  <!-- Dílna: co na webu být musí. Nová věc = nová položka <li>. -->
-  <section>
-    <h2>Dílna</h2>
-    <ul class="dilna">
+    <div class="vedle">
+      <nav class="navigace" aria-label="Oddíly stránky">
+        <ul>
+          <li><a href="#co-delame">co děláme</a></li>
+          <li><a href="#jak-pracujeme">jak pracujeme</a></li>
+          <li><a href="#projekty">projekty</a></li>
+          <li><a href="#kontakt">kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- Schéma: zdroje vlevo, uprostřed kód, model a člověk, vpravo výsledky.
+           Čáry se při načtení nakreslí a po nich jednou proběhnou vínové pulsy;
+           do pěti sekund je schéma v klidu. Kdo má pohyb vypnutý
+           (prefers-reduced-motion), vidí schéma rovnou v klidu. -->
+      <figure class="schema">
+        <svg viewBox="0 0 400 340" role="img" aria-labelledby="schema-nazev" aria-describedby="schema-popis">
+          <title id="schema-nazev">Jak u&nbsp;nás teče práce</title>
+          <desc id="schema-popis">Data z&nbsp;různých zdrojů nejdřív zpracuje kód. Co se dá rozhodnout pravidly, jde rovnou do výsledku. Co potřebuje úsudek, posoudí jazykový model. Nevratné kroky schvaluje člověk.</desc>
+
+          <g class="pozadi">
+            <path class="vodic" d="M16 35V305"/>
+            <circle class="prsten toci" cx="268" cy="78" r="42"/>
+            <circle class="prsten modry" cx="268" cy="262" r="42"/>
+          </g>
+
+          <g class="hrany">
+            <path class="hrana" pathLength="1" style="--d:0s" d="M21 35C75 35 92 151.6 127.6 151.6"/>
+            <path class="hrana" pathLength="1" style="--d:.08s" d="M21 89C75 89 92 158.2 122.8 158.2"/>
+            <path class="hrana" pathLength="1" style="--d:.16s" d="M21 143C75 143 92 165.9 120.3 165.9"/>
+            <path class="hrana" pathLength="1" style="--d:.24s" d="M21 197C75 197 92 174.1 120.3 174.1"/>
+            <path class="hrana" pathLength="1" style="--d:.32s" d="M21 251C75 251 92 181.8 122.8 181.8"/>
+            <path class="hrana" pathLength="1" style="--d:.4s" d="M21 305C75 305 92 188.4 127.6 188.4"/>
+            <path class="hrana" pathLength="1" style="--d:.7s" d="M172 170H379"/>
+            <path class="hrana" pathLength="1" style="--d:.7s" d="M162.7 150.1C182 124 208 98 240.8 90.7"/>
+            <path class="hrana" pathLength="1" style="--d:.7s" d="M162.7 189.9C182 216 208 242 240.8 249.3"/>
+            <path class="hrana" pathLength="1" style="--d:1.1s" d="M297 85.8C330 92 352 104 379 104"/>
+            <path class="hrana" pathLength="1" style="--d:1.1s" d="M268 108V232"/>
+            <path class="hrana" pathLength="1" style="--d:1.3s" d="M297 254.2C330 248 352 236 379 236"/>
+          </g>
+
+          <!-- Každý puls vyrazí, až je jeho čára nakreslená a předchozí puls dorazil do uzlu. -->
+          <g class="pulsy">
+            <path class="puls" pathLength="100" style="--d:1.1s" d="M21 35C75 35 92 151.6 127.6 151.6"/>
+            <path class="puls" pathLength="100" style="--d:1.18s" d="M21 89C75 89 92 158.2 122.8 158.2"/>
+            <path class="puls" pathLength="100" style="--d:1.26s" d="M21 143C75 143 92 165.9 120.3 165.9"/>
+            <path class="puls" pathLength="100" style="--d:1.34s" d="M21 197C75 197 92 174.1 120.3 174.1"/>
+            <path class="puls" pathLength="100" style="--d:1.42s" d="M21 251C75 251 92 181.8 122.8 181.8"/>
+            <path class="puls" pathLength="100" style="--d:1.5s" d="M21 305C75 305 92 188.4 127.6 188.4"/>
+            <path class="puls" pathLength="100" style="--d:2.2s" d="M172 170H379"/>
+            <path class="puls" pathLength="100" style="--d:2.3s" d="M162.7 150.1C182 124 208 98 240.8 90.7"/>
+            <path class="puls" pathLength="100" style="--d:2.4s" d="M162.7 189.9C182 216 208 242 240.8 249.3"/>
+            <path class="puls" pathLength="100" style="--d:3s" d="M297 85.8C330 92 352 104 379 104"/>
+            <path class="puls" pathLength="100" style="--d:3.1s" d="M268 108V232"/>
+            <path class="puls" pathLength="100" style="--d:3.8s" d="M297 254.2C330 248 352 236 379 236"/>
+          </g>
+
+          <g class="uzly">
+            <circle class="zdroj" cx="16" cy="35" r="4.5"/>
+            <circle class="zdroj" cx="16" cy="89" r="4.5"/>
+            <circle class="zdroj" cx="16" cy="143" r="4.5"/>
+            <circle class="zdroj" cx="16" cy="197" r="4.5"/>
+            <circle class="zdroj" cx="16" cy="251" r="4.5"/>
+            <circle class="zdroj" cx="16" cy="305" r="4.5"/>
+            <circle class="uzel" cx="146" cy="170" r="26"/>
+            <circle class="uzel model" cx="268" cy="78" r="30"/>
+            <circle class="uzel" cx="268" cy="262" r="30"/>
+            <circle class="vysledek" cx="384" cy="104" r="5"/>
+            <circle class="vysledek" cx="384" cy="170" r="5"/>
+            <circle class="vysledek" cx="384" cy="236" r="5"/>
+            <text x="146" y="170">kód</text>
+            <text x="268" y="78">model</text>
+            <text x="268" y="262">člověk</text>
+            <text class="popisek vlevo" x="6" y="13">zdroje</text>
+            <text class="popisek vpravo" x="394" y="72">výsledek</text>
+          </g>
+        </svg>
+        <figcaption>
+          <span>Kód tam, kde stačí pravidla.</span>
+          <span>Model tam, kde je potřeba úsudek.</span>
+          <span>Člověk tam, kde je krok nevratný.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main id="obsah">
+
+  <div class="obal uvod-blok">
+    <p class="uvod">Stavíme AI asistenty, agenty a&nbsp;automatizace podle toho, jak ve vaší firmě skutečně běží práce, a&nbsp;jejich přínos měříme na vašich datech.</p>
+    <p class="akce">
+      <a class="vyzva" href="mailto:jay@reuel.cz">Napište nám: jay@reuel.cz</a>
+      <a class="odkaz" href="#projekty">Co jsme postavili</a>
+    </p>
+  </div>
+
+  <!-- Služby: každá odkazuje na projekty, které ji dokládají. -->
+  <section id="co-delame" class="obal oddil">
+    <h2>co děláme</h2>
+    <ul class="sluzby">
       <li>
-        <div class="hlavicka">
-          <h3><a href="/watson/">Watson</a></h3>
-          <span class="stitek">active</span>
-        </div>
+        <h3>asistenti</h3>
+        <p>Asistent s&nbsp;pamětí, napojený na poštu a&nbsp;kalendář, který rozumí i&nbsp;hlasovým zprávám. Co je nevratné, nechá na člověku.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#watson">osobní asistent Watson</a></p>
       </li>
       <li>
-        <div class="hlavicka">
-          <h3><a href="/pilot/">DÁL</a></h3>
-          <span class="stitek">draft</span>
-        </div>
+        <h3>automatizace procesů</h3>
+        <p>Sběr, třídění, souhrny a&nbsp;upozornění předáme systému, který běží sám.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#hlidac">hlídač realitních příležitostí</a>, <a href="#titulky">automatické titulky</a></p>
+      </li>
+      <li>
+        <h3>monitoring a&nbsp;analýza</h3>
+        <p>Zdroje, na kterých vám záleží, složíme do přehledu na pár minut čtení. Fakta v&nbsp;něm stojí odděleně od výkladu.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#sberac">mediální sběrač</a>, <a href="#analytik">mediální analytik</a>, <a href="#hlidac">hlídač realitních příležitostí</a></p>
+      </li>
+      <li>
+        <h3>data a&nbsp;přehledy</h3>
+        <p>Přehledy a&nbsp;reporty z&nbsp;dat, která se mění, se zdrojem u&nbsp;každého údaje. Do prohlížeče, do PDF nebo do e-mailu.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#laborator">investiční laboratoř</a>, <a href="#pozemkovy-agent">pozemková prověrka</a></p>
+      </li>
+      <li>
+        <h3>aplikace a&nbsp;rozhraní</h3>
+        <p>Webové aplikace do telefonu i&nbsp;počítače, chat v&nbsp;Telegramu nebo nástroj přímo u&nbsp;vás. Rozhraní volíme podle toho, kde lidé pracují.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#zapisovac">mariášový zapisovač</a>, <a href="#kapela">virtuální doprovodná kapela</a></p>
+      </li>
+      <li>
+        <h3>návrh, audit a&nbsp;měření</h3>
+        <p>Než se začne stavět: rozbor procesu a&nbsp;dat, specifikace, etické hranice a&nbsp;test, který z&nbsp;úsudku vašeho odborníka udělá měřítko.</p>
+        <p class="priklad">z&nbsp;vlastních projektů: <a href="#audit">audit připravenosti úřadů</a>, <a href="#dilna">návrhová dílna</a></p>
       </li>
     </ul>
   </section>
 
-  <section>
-    <h2>Kontakt</h2>
-    <p><a href="mailto:jay@reuel.cz">jay@reuel.cz</a> ·
-       <a href="https://github.com/reueljay">GitHub</a></p>
+  <section id="jak-pracujeme" class="obal oddil">
+    <h2>jak pracujeme</h2>
+    <div>
+      <ol class="kroky">
+        <li>
+          <h3>poznáme vaše procesy</h3>
+          <p>Mluvíme s&nbsp;lidmi, kteří práci dělají, a&nbsp;hledáme, kde se ztrácí čas a&nbsp;vznikají chyby.</p>
+        </li>
+        <li>
+          <h3>navrhneme nejjednodušší řešení</h3>
+          <p>Pravidla svěříme kódu, úsudek modelu. Agenta nasadíme jen tam, kde systém musí sám volit další krok.</p>
+        </li>
+        <li>
+          <h3>ověříme na vašich datech</h3>
+          <p>Úspěch posuzujeme na skutečných případech podle měřítka, které určí váš odborník.</p>
+        </li>
+        <li>
+          <h3>spustíme provoz s&nbsp;pojistkami</h3>
+          <p>Hlídáme náklady, zaznamenáváme každý dotaz na model a&nbsp;nevratné kroky schvaluje člověk.</p>
+        </li>
+      </ol>
+
+      <h3 class="podnadpis">na čem trváme</h3>
+      <ul class="body zasady">
+        <li><strong>Pojistky v&nbsp;kódu, ne jen prosby k&nbsp;modelu.</strong></li>
+        <li><strong>Systém přizná, co neví.</strong></li>
+        <li><strong>Fakta zvlášť, výklad zvlášť.</strong></li>
+        <li><strong>Nejmenší model, který úlohu zvládne.</strong></li>
+      </ul>
+    </div>
   </section>
 
-  <footer>Bez cookies a bez měření návštěvnosti.</footer>
+  <section id="projekty" class="obal oddil">
+    <h2>projekty</h2>
+    <div>
+      <div class="karty">
+
+        <article class="karta" id="watson">
+          <p class="stitek">asistent</p>
+          <h3>osobní asistent Watson</h3>
+          <p class="vystizne">AI asistent v&nbsp;Telegramu, postavený jako kritický partner k&nbsp;přemýšlení, ne jako automat na odpovědi. Pamatuje si dřívější rozhovory, ráno roztřídí poštu, hlídá kalendář a&nbsp;rozumí hlasovým zprávám.</p>
+          <ul class="body">
+            <li>Paměť ve čtyřech vrstvách, od rozhovorů po závěry potvrzené člověkem.</li>
+            <li>Pojistky v&nbsp;kódu: e-mail sám neodešle ani nesmaže, únik interních instrukcí hlídá tajná značka a&nbsp;pravidelný test zkouší, jestli neposlechne podvržený pokyn.</li>
+          </ul>
+          <p class="dal"><a href="/watson/">Watson na vlastní stránce</a></p>
+        </article>
+
+        <article class="karta" id="sberac">
+          <p class="stitek">monitoring</p>
+          <h3>mediální sběrač</h3>
+          <p class="vystizne">Každé ráno projde zpravodajské weby napříč spektrem, od celostátních redakcí po regionální a&nbsp;alternativní zdroje. Vyřadí šum, sloučí zprávy o&nbsp;téže události a&nbsp;pošle stručný přehled.</p>
+          <ul class="body">
+            <li>Otevřeně hlásí, které zdroje ten den vypadly. Přehled, který neumí přiznat mezeru, by jen předstíral jistotu.</li>
+            <li>Slučuje bez jazykového modelu a&nbsp;opakované spuštění nic nezdvojí.</li>
+          </ul>
+        </article>
+
+        <article class="karta" id="analytik">
+          <p class="stitek">analýza</p>
+          <h3>mediální analytik</h3>
+          <p class="vystizne">Odpovídá na otázku, kterou z&nbsp;jednotlivých článků nevyčtete: „Co se mě z&nbsp;toho týká a&nbsp;nakolik?“ Sleduje témata v&nbsp;čase a&nbsp;porovnává prostor v&nbsp;médiích se stopami zájmu veřejnosti ve vyhledávačích, na Wikipedii a&nbsp;na YouTube.</p>
+          <ul class="body">
+            <li>Pohledy několika oborů v&nbsp;jediném dotazu na model: každý je podepsaný, mluví jen za svůj obor a&nbsp;smí mlčet.</li>
+            <li>Fakta, výklad a&nbsp;doporučení drží odděleně, s&nbsp;mírou podloženosti, a&nbsp;strojová kontrola zachytí kategorické formulace typu „nepochybně“.</li>
+          </ul>
+        </article>
+
+        <article class="karta" id="pozemkovy-agent">
+          <p class="stitek">data a&nbsp;mapy</p>
+          <h3>pozemková prověrka</h3>
+          <p class="vystizne">Po zadání parcely projde během chvíle řadu veřejných zdrojů, od katastru po ochranu přírody, záplavová území, geologii a&nbsp;památky. Složí z&nbsp;nich předinvestiční prověrku s&nbsp;mapou a&nbsp;semaforem rizik podle průhledných pravidel.</p>
+          <ul class="body">
+            <li>Každé tvrzení nese zdroj a&nbsp;datum; co nástroj nezjistí, přizná, místo aby si to domýšlel.</li>
+            <li>Šetrný a&nbsp;legální přístup k&nbsp;datům je vynucený přímo v&nbsp;architektuře, ne jen slíbený v&nbsp;dokumentaci.</li>
+          </ul>
+        </article>
+
+        <article class="karta" id="laborator">
+          <p class="stitek">simulace s&nbsp;fiktivními penězi</p>
+          <h3>investiční laboratoř</h3>
+          <p class="vystizne">Investiční komise napsaná jako deterministický kód bez jazykového modelu: tři analytici, správce portfolia a&nbsp;manažer rizik každý den rozhodují o&nbsp;fiktivních investicích na skutečných datech dvou burz. Každé rozhodnutí se poměřuje s&nbsp;prostou investicí do indexu a&nbsp;zobrazuje v&nbsp;animované mapě toků peněz.</p>
+          <ul class="body">
+            <li>Žádný pohled do budoucnosti: obchod se simuluje až při dalším otevření burzy.</li>
+            <li>Ceny se každý večer porovnávají s&nbsp;oficiálním kurzovním lístkem a&nbsp;pojistky hlídají podezřelé a&nbsp;zamrzlé údaje.</li>
+          </ul>
+        </article>
+
+        <article class="karta" id="zapisovac">
+          <p class="stitek">aplikace do telefonu</p>
+          <h3>mariášový zapisovač</h3>
+          <p class="vystizne">Karetní stůl bez tužky a&nbsp;papíru: webová aplikace do telefonu, která po každém kole sama sečte výsledky včetně fleků, sedmy a&nbsp;kila. Pravidla nesložil model z&nbsp;paměti. Dohledal je tým rešeršních agentů ve zveřejněných zdrojích a&nbsp;další agenti v&nbsp;roli skeptiků je podle nich prověřili.</p>
+          <ul class="body">
+            <li>Sporná místa pravidel zůstala označená jako výklad, ne jako jistota.</li>
+            <li>Každé kolo si pamatuje pravidla, podle kterých se počítalo.</li>
+          </ul>
+        </article>
+
+        <article class="karta" id="kapela">
+          <p class="stitek">aplikace · hudba</p>
+          <h3>virtuální doprovodná kapela</h3>
+          <p class="vystizne">Kapela, která hraje s&nbsp;vámi: z&nbsp;akordů písně dopočítá doprovod od swingu po tango, ukáže hmaty pro ukulele i&nbsp;kytaru a&nbsp;takt po taktu vás provede notami. Noty z&nbsp;fotografie nebo PDF přečte program na rozpoznávání notového zápisu; akordy a&nbsp;formu skladby doplní malý jazykový model.</p>
+          <ul class="body">
+            <li>Model má pevně omezená práva i&nbsp;rozpočet a&nbsp;jeho návrhy čekají na schválení.</li>
+            <li>Nahrávku hry rozebere na tempo, tóninu a&nbsp;akordy po taktech.</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <h3 class="podnadpis">další projekty</h3>
+      <ul class="dalsi">
+        <li id="hlidac">
+          <h4>hlídač realitních příležitostí</h4>
+          <p>Každý týden projde dražby, nabídky veřejného majetku, úřední desky i&nbsp;insolvenční prodeje. Co stojí za pozornost, vybere podle pravidel vyladěných s&nbsp;odborníkem z&nbsp;praxe.</p>
+        </li>
+        <li id="audit">
+          <h4>audit připravenosti úřadů na AI asistenta</h4>
+          <p>Robot šetrně prošel weby úřadů a&nbsp;změřil, jak čerstvé jsou jejich informace a&nbsp;kolik obsahu je zamčeno v&nbsp;PDF; k&nbsp;tomu vznikla metodika, jak spolehlivost veřejného AI asistenta měřit, ne odhadovat.</p>
+        </li>
+        <li id="titulky">
+          <h4>automatické titulky z&nbsp;videa</h4>
+          <p>Z&nbsp;videa vhozeného do složky vznikne přepis i&nbsp;titulky. Řeč se rozpoznává přímo v&nbsp;počítači a&nbsp;výsledek před zveřejněním kontroluje člověk.</p>
+        </li>
+        <li id="dilna">
+          <h4>návrhová dílna</h4>
+          <p>Místo, kde se systémy navrhují dřív, než vznikne první řádek kódu, a&nbsp;odkud pochází metoda, jak úsudek odborníka převést na měřitelný test.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="kontakt" class="zaver">
+    <div class="obal">
+      <h2>kontakt</h2>
+      <div>
+        <p class="velka">Pojďme se podívat na váš proces.</p>
+        <p>Napište pár vět o&nbsp;tom, co vás zdržuje, a&nbsp;navrhneme první krok.</p>
+        <a class="posta" href="mailto:jay@reuel.cz">jay@reuel.cz</a>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<footer>
+  <div class="obal poznamky">
+    <p>Bez cookies a&nbsp;bez měření návštěvnosti. Písma <a href="/fonts/OFL-Jost.txt">Jost</a> a&nbsp;<a href="/fonts/OFL-Literata.txt">Literata</a> pod licencí SIL Open Font License&nbsp;1.1.</p>
+  </div>
+  <div class="pata">
+    <div class="obal">
+      <span class="znacka">jay studio</span>
+      <span>AI služby pro firmy</span>
+      <a href="mailto:jay@reuel.cz">jay@reuel.cz</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
