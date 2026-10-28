@@ -44,10 +44,11 @@
       <article class="karta" id="watson">
         <p class="stitek">asistent</p>
         <h3>osobní asistent Watson</h3>
-        <p class="vystizne">AI asistent v&nbsp;Telegramu, postavený jako kritický partner k&nbsp;přemýšlení, ne jako automat na odpovědi. Pamatuje si dřívější rozhovory, ráno roztřídí poštu, hlídá kalendář a&nbsp;rozumí hlasovým zprávám.</p>
+        <p class="vystizne">AI asistent v&nbsp;Telegramu, postavený jako kritický partner k&nbsp;přemýšlení, ne jako automat na odpovědi. Pamatuje si dřívější rozhovory, jednou denně roztřídí poštu, čte kalendář i&nbsp;zapisuje do něj a&nbsp;rozumí hlasovým zprávám.</p>
         <ul class="body">
           <li>Paměť ve čtyřech vrstvách, od rozhovorů po závěry potvrzené člověkem.</li>
-          <li>Pojistky v&nbsp;kódu: e-mail sám neodešle ani nesmaže, únik interních instrukcí hlídá tajná značka a&nbsp;pravidelný test zkouší, jestli neposlechne podvržený pokyn.</li>
+          <li>Pojistky v&nbsp;kódu: e-mail sám neodešle ani nesmaže. Co přesune do spamu, vypíše v&nbsp;přehledu jménem, aby šel omyl snadno napravit.</li>
+          <li>Únik interních instrukcí hlídá tajná značka a&nbsp;pravidelný test zkouší, jestli Watson při třídění pošty neposlechne podvržený pokyn.</li>
         </ul>
         <p class="dal"><a href="/watson/">Watson na vlastní stránce</a></p>
       </article>
@@ -55,9 +56,9 @@
       <article class="karta" id="sberac">
         <p class="stitek">monitoring</p>
         <h3>mediální sběrač</h3>
-        <p class="vystizne">Každé ráno projde zpravodajské weby napříč spektrem, od celostátních redakcí po regionální a&nbsp;alternativní zdroje. Vyřadí šum, sloučí zprávy o&nbsp;téže události a&nbsp;pošle stručný přehled.</p>
+        <p class="vystizne">Jednou denně, zpravidla ráno, projde zpravodajské weby napříč spektrem, od celostátních redakcí po regionální a&nbsp;alternativní zdroje. Vyřadí zjevný šum, sloučí zprávy o&nbsp;téže události a&nbsp;pošle přehled.</p>
         <ul class="body">
-          <li>Otevřeně hlásí, které zdroje ten den vypadly. Přehled, který neumí přiznat mezeru, by jen předstíral jistotu.</li>
+          <li>Hlásí, které zdroje ten den vypadly. Přehled, který výpadek zdroje zamlčí, by jen předstíral jistotu.</li>
           <li>Slučuje bez jazykového modelu a&nbsp;opakované spuštění nic nezdvojí.</li>
         </ul>
       </article>
@@ -65,39 +66,39 @@
       <article class="karta" id="analytik">
         <p class="stitek">analýza</p>
         <h3>mediální analytik</h3>
-        <p class="vystizne">Odpovídá na otázku, kterou z&nbsp;jednotlivých článků nevyčtete: „Co se mě z&nbsp;toho týká a&nbsp;nakolik?“ Sleduje témata v&nbsp;čase a&nbsp;porovnává prostor v&nbsp;médiích se stopami zájmu veřejnosti ve vyhledávačích, na Wikipedii a&nbsp;na YouTube.</p>
+        <p class="vystizne">Vznikl kvůli otázce, kterou z&nbsp;jednotlivých článků nevyčtete: „Co se mě z&nbsp;toho týká a&nbsp;nakolik?“ Sleduje témata v&nbsp;čase a&nbsp;porovnává prostor v&nbsp;médiích se stopami zájmu veřejnosti ve vyhledávání Googlu, na Wikipedii a&nbsp;na YouTube.</p>
         <ul class="body">
-          <li>Pohledy několika oborů v&nbsp;jediném dotazu na model: každý je podepsaný, mluví jen za svůj obor a&nbsp;smí mlčet.</li>
-          <li>Fakta, výklad a&nbsp;doporučení drží odděleně, s&nbsp;mírou podloženosti, a&nbsp;strojová kontrola zachytí kategorické formulace typu „nepochybně“.</li>
+          <li>Pohledy několika oborů v&nbsp;jediném dotazu na model: každý je podepsaný, má zadáno mluvit jen za svůj obor a&nbsp;smí i&nbsp;mlčet.</li>
+          <li>Fakta drží odděleně od výkladu a&nbsp;u&nbsp;výkladu kauzy uvádí, z&nbsp;čeho vznikl.</li>
         </ul>
       </article>
 
       <article class="karta" id="pozemkovy-agent">
-        <p class="stitek">data a&nbsp;mapy</p>
+        <p class="stitek">data a&nbsp;mapy · prototyp</p>
         <h3>pozemková prověrka</h3>
-        <p class="vystizne">Po zadání parcely projde během chvíle řadu veřejných zdrojů, od katastru po ochranu přírody, záplavová území, geologii a&nbsp;památky. Složí z&nbsp;nich předinvestiční prověrku s&nbsp;mapou a&nbsp;semaforem rizik podle průhledných pravidel.</p>
+        <p class="vystizne">Po zadání parcely projde během chvíle řadu veřejných zdrojů, od otevřených dat katastru po ochranu přírody, záplavová území, geologii a&nbsp;památky. Složí z&nbsp;nich podklad k&nbsp;předinvestiční prověrce s&nbsp;mapou a&nbsp;semaforem rizik. Semafor u&nbsp;každého hlediska uvádí, proč svítí, a&nbsp;posouzení nechává odborníkovi.</p>
         <ul class="body">
-          <li>Každé tvrzení nese zdroj a&nbsp;datum; co nástroj nezjistí, přizná, místo aby si to domýšlel.</li>
-          <li>Šetrný a&nbsp;legální přístup k&nbsp;datům je vynucený přímo v&nbsp;architektuře, ne jen slíbený v&nbsp;dokumentaci.</li>
+          <li>Každý převzatý údaj nese odkaz na zdroj i&nbsp;datum; co nástroj nezjistí, přizná, místo aby si to domýšlel.</li>
+          <li>Všechny dotazy jdou jedinou branou v&nbsp;kódu: ta pustí nejvýš jeden dotaz za sekundu na každý zdroj a&nbsp;ke službě Nahlížení do katastru nepustí žádný.</li>
         </ul>
       </article>
 
       <article class="karta" id="laborator">
         <p class="stitek">simulace s&nbsp;fiktivními penězi</p>
         <h3>investiční laboratoř</h3>
-        <p class="vystizne">Investiční komise napsaná jako deterministický kód bez jazykového modelu: tři analytici, správce portfolia a&nbsp;manažer rizik každý den rozhodují o&nbsp;fiktivních investicích na skutečných datech dvou burz. Každé rozhodnutí se poměřuje s&nbsp;prostou investicí do indexu a&nbsp;zobrazuje v&nbsp;animované mapě toků peněz.</p>
+        <p class="vystizne">Investiční komise napsaná jako kód s&nbsp;pevnými pravidly, bez jazykového modelu: tři analytici, správce portfolia a&nbsp;manažer rizik jednou týdně rozhodují o&nbsp;fiktivních investicích do amerických fondů za skutečné ceny. Laboratoř sleduje i&nbsp;pražskou burzu. Každou strategii poměřuje s&nbsp;prostou investicí do indexu, v&nbsp;Praze do koše hlavních akcií, a&nbsp;toky peněz ukazuje v&nbsp;animované mapě.</p>
         <ul class="body">
           <li>Žádný pohled do budoucnosti: obchod se simuluje až při dalším otevření burzy.</li>
-          <li>Ceny se každý večer porovnávají s&nbsp;oficiálním kurzovním lístkem a&nbsp;pojistky hlídají podezřelé a&nbsp;zamrzlé údaje.</li>
+          <li>Ceny z&nbsp;pražské burzy se po každém obchodním dni porovnávají s&nbsp;jejím kurzovním lístkem a&nbsp;pojistky hlídají podezřelé a&nbsp;zamrzlé údaje.</li>
         </ul>
       </article>
 
       <article class="karta" id="zapisovac">
-        <p class="stitek">aplikace do telefonu</p>
+        <p class="stitek">aplikace do telefonu · prototyp</p>
         <h3>mariášový zapisovač</h3>
         <p class="vystizne">Karetní stůl bez tužky a&nbsp;papíru: webová aplikace do telefonu, která po každém kole sama sečte výsledky včetně fleků, sedmy a&nbsp;kila. Pravidla nesložil model z&nbsp;paměti. Dohledal je tým rešeršních agentů ve zveřejněných zdrojích a&nbsp;další agenti v&nbsp;roli skeptiků je podle nich prověřili.</p>
         <ul class="body">
-          <li>Sporná místa pravidel zůstala označená jako výklad, ne jako jistota.</li>
+          <li>V&nbsp;podkladech k&nbsp;pravidlům zůstala sporná místa označená jako výklad, ne jako jistota.</li>
           <li>Každé kolo si pamatuje pravidla, podle kterých se počítalo.</li>
         </ul>
       </article>
@@ -105,10 +106,10 @@
       <article class="karta" id="kapela">
         <p class="stitek">aplikace · hudba</p>
         <h3>virtuální doprovodná kapela</h3>
-        <p class="vystizne">Kapela, která hraje s&nbsp;vámi: z&nbsp;akordů písně dopočítá doprovod od swingu po tango, ukáže hmaty pro ukulele i&nbsp;kytaru a&nbsp;takt po taktu vás provede notami. Noty z&nbsp;fotografie nebo PDF přečte program na rozpoznávání notového zápisu; akordy a&nbsp;formu skladby doplní malý jazykový model.</p>
+        <p class="vystizne">Kapela, která hraje s&nbsp;vámi: z&nbsp;akordů písně dopočítá doprovod od swingu po tango, ukáže hmaty pro ukulele i&nbsp;kytaru a&nbsp;v&nbsp;notách vyznačí, kde se právě hraje. Noty ze skenu nebo PDF přečte program na rozpoznávání notového zápisu; akordy a&nbsp;formu skladby zkouší doplňovat malý jazykový model.</p>
         <ul class="body">
-          <li>Model má pevně omezená práva i&nbsp;rozpočet a&nbsp;jeho návrhy čekají na schválení.</li>
-          <li>Nahrávku hry rozebere na tempo, tóninu a&nbsp;akordy po taktech.</li>
+          <li>Přehrávač hraje bez jazykového modelu i&nbsp;bez internetu; model se smí zapojit jen při načítání nové písně.</li>
+          <li>Z&nbsp;nahrávky hry odhadne tempo, tóninu a&nbsp;akordy po taktech.</li>
         </ul>
       </article>
 
@@ -120,19 +121,19 @@
     <ul class="dalsi">
       <li id="hlidac">
         <h3>hlídač realitních příležitostí</h3>
-        <p>Každý týden projde dražby, nabídky veřejného majetku, úřední desky i&nbsp;insolvenční prodeje. Co stojí za pozornost, vybere podle pravidel vyladěných s&nbsp;odborníkem z&nbsp;praxe.</p>
+        <p>Každý týden projde dražby, nabídky veřejného majetku, úřední desky i&nbsp;insolvenční prodeje. Co stojí za pozornost, vybere podle pravidel postavených na zadání a&nbsp;hodnocení odborníka z&nbsp;praxe.</p>
       </li>
       <li id="audit">
         <h3>audit připravenosti úřadů na AI asistenta</h3>
-        <p>Robot šetrně prošel weby úřadů a&nbsp;změřil, jak čerstvé jsou jejich informace a&nbsp;kolik obsahu je zamčeno v&nbsp;PDF; k&nbsp;tomu vznikla metodika, jak spolehlivost veřejného AI asistenta měřit, ne odhadovat.</p>
+        <p>Robot prošel weby úřadů s&nbsp;pauzami mezi dotazy a&nbsp;změřil, jak staré jsou jejich poslední aktuality a&nbsp;jaký podíl odkazů v&nbsp;návodech pro občany vede na PDF. K&nbsp;tomu je připravená metodika, jak spolehlivost veřejného AI asistenta měřit, ne odhadovat.</p>
       </li>
       <li id="titulky">
         <h3>automatické titulky z&nbsp;videa</h3>
-        <p>Z&nbsp;videa vhozeného do složky vznikne přepis i&nbsp;titulky. Řeč se rozpoznává přímo v&nbsp;počítači a&nbsp;výsledek před zveřejněním kontroluje člověk.</p>
+        <p>Z&nbsp;videa vhozeného do složky vznikne přepis i&nbsp;titulky. Řeč se rozpoznává přímo v&nbsp;počítači a&nbsp;postup předepisuje, že výsledek před zveřejněním zkontroluje člověk.</p>
       </li>
       <li id="dilna">
         <h3>návrhová dílna</h3>
-        <p>Místo, kde se systémy navrhují dřív, než vznikne první řádek kódu, a&nbsp;odkud pochází metoda, jak úsudek odborníka převést na měřitelný test.</p>
+        <p>Místo, kde se systémy navrhují dřív, než vznikne první řádek kódu, a&nbsp;kde se zkouší metoda, jak úsudek odborníka převést na měřitelný test.</p>
       </li>
     </ul>
   </section>
